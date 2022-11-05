@@ -41,5 +41,4 @@ async def on_message(msg):
         if msg.content.lower().startswith('#hi'):
             await msg.channel.send(f'Hi, {msg.author.display_name}')
 
-
 client.run(os.getenv('TOKEN'))
