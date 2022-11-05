@@ -24,7 +24,6 @@ General commands:
         for guild in self.bot.guilds:
             for channel in guild.text_channels:
                 self.text_channel_list.append(channel)
-        print('Bot started')
 
     @commands.command(name='help', help='Displays all the available commands')
     async def help(self, ctx):
