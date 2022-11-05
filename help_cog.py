@@ -7,24 +7,20 @@ class HelpCog(commands.Cog):
         self.help_message = '''
 ```
 General commands:
-#help - Displays all the available commands
-#play <keywords> - Finds the song on youtube and plays it in your current channel
-#pause - Pauses the current song being played or resumes if already paused
-#resume - Resumes playing the current song
-#queue - Displays the current music queue
-#skip - Skips the current song being played
-#clear - Stops the music and clears the queue
-#leave - Disconnected the bot from the voice channel
+--------------------------------------------------------------------------------------------
+#help, #h - Display all the available commands.
+#play, #p <keywords> - Find the track on YouTube and play it in your current voice channel.
+#pause - Pause the current track being played or resume if already paused.
+#resume, #r - Resume playing the current track.
+#queue, #q - Display the current queue.
+#skip, #s - Skip the current track being played.
+#clear, #c - Stop the music and clear the queue.
+#leave, #disconnect, #kick, #l, #d, #k - Disconnect the bot from the voice channel.
+#track, #t - Display the current track.
+--------------------------------------------------------------------------------------------
 ```
 '''
-        self.text_channel_list = []
 
-    @commands.Cog.listener()
-    async def on_ready(self):
-        for guild in self.bot.guilds:
-            for channel in guild.text_channels:
-                self.text_channel_list.append(channel)
-
-    @commands.command(name='help', help='Displays all the available commands')
+    @commands.command(name='help', aliases=['h'], help='Displays all the available commands')
     async def help(self, ctx):
         await ctx.send(self.help_message)

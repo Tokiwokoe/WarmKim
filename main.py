@@ -7,6 +7,7 @@ from music_cog import MusicCog
 
 bot = commands.Bot(command_prefix='#', intents=discord.Intents.all())
 bot.remove_command('help')
+bot.remove_command('leave')
 
 
 @bot.event
